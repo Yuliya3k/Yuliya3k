@@ -11,7 +11,7 @@
 - 🖌 **3D / 2D creation** – Blender (custom morphs), DAZ 3D, Adobe Photoshop & Illustrator  
 - 🎬 **Video** – Adobe Premiere Pro & DaVinci Resolve  
 - 📣 **Promotion & talent development** – I love growing projects *and* the people behind them  
-- 🛫 Currently polishing a sci-fi dating sim & exploring C++ for deeper engine work  
+- 🛫 Currently polishing a sci-fi dating sim & exploring C# for deeper engine work  
 
 ---
 
