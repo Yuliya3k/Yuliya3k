@@ -17,10 +17,9 @@
 
 ## 🌐 Socials
 <p>
-  <a href="https://x.com/Yuliya11614827"><img src="https://img.shields.io/badge/X-000000?style=for-the-badge&logo=x&logoColor=white"/></a>
+  <a href="https://x.com/yuliyakovach"><img src="https://img.shields.io/badge/X-000000?style=for-the-badge&logo=x&logoColor=white"/></a>
   <a href="https://www.youtube.com/@yuliya3k"><img src="https://img.shields.io/badge/YouTube-FF0000?style=for-the-badge&logo=youtube&logoColor=white"/></a>
   <a href="https://yuliya3k.itch.io"><img src="https://img.shields.io/badge/itch.io-EF3958?style=for-the-badge&logo=itchdotio&logoColor=white"/></a>
-  <a href="https://www.tiktok.com/@fetishai1"><img src="https://img.shields.io/badge/TikTok-000000?style=for-the-badge&logo=tiktok&logoColor=white"/></a>
   <a href="https://www.patreon.com/c/ybellies"><img src="https://img.shields.io/badge/Patreon-FF424D?style=for-the-badge&logo=patreon&logoColor=white"/></a>
   <a href="https://t.me/yuliyakovach"><img src="https://img.shields.io/badge/Telegram-2CA5E0?style=for-the-badge&logo=telegram&logoColor=white"/></a>
 </p>
