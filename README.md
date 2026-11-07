@@ -44,8 +44,7 @@
 
 ## 📊 GitHub Stats
 <p align="center">
-  <img src="https://github-readme-stats.vercel.app/api?username=Yuliya3k&show_icons=true&theme=github_dark&border_color=444" height="150"/>
-  <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=Yuliya3k&layout=compact&theme=github_dark&border_color=444" height="150"/>
+  <img src="metrics.svg" alt="GitHub metrics, including private repositories"/>
 </p>
 
 ---
