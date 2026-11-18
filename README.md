@@ -44,7 +44,22 @@
 
 ## 📊 GitHub Stats
 <p align="center">
-  <img src="metrics.svg" alt="GitHub metrics, including private repositories"/>
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="stats/commits-dark.svg"/>
+    <img src="stats/commits-light.svg" width="840" alt="Commits in the last 12 months, all-time commits and commits per week, private repositories included"/>
+  </picture>
+</p>
+<p align="center">
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="stats/languages-dark.svg"/>
+    <img src="stats/languages-light.svg" width="840" alt="Most used languages by code size across all repositories"/>
+  </picture>
+</p>
+<p align="center">
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="stats/projects-dark.svg"/>
+    <img src="stats/projects-light.svg" width="840" alt="Repositories by project type: Unity, Unreal Engine, Ren'Py, web and tools"/>
+  </picture>
 </p>
 
 ---
