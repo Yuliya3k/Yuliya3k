@@ -332,14 +332,19 @@ def commits_card(stats, theme):
         previous = month
     # Reserve a horizontal annotation band above the plot, connected to the peak.
     px, py = points[peak]
-    peak_label = f'Peak: {number(highest)} commits, week of {calendar.month_abbr[weeks[peak]["start"].month]} {weeks[peak]["start"].day}'
+    if peak == 51:
+        # The latest week is the peak: one label, no repeated end value.
+        peak_label = f'This week: {number(highest)} commits, the highest of the year'
+    else:
+        peak_label = f'Peak: {number(highest)} commits, week of {calendar.month_abbr[weeks[peak]["start"].month]} {weeks[peak]["start"].day}'
     label_x = min(max(px, 24 + width(peak_label, 12)/2), 816-width(peak_label,12)/2)
     s.text(label_x, 319, peak_label, 12, "secondary", anchor="middle")
     s.add(f'<path d="M{px},{py-6} V326" fill="none" stroke="{s.t["baseline"]}"/>')
     for i in {peak, 51}:
         x,y = points[i]
         s.add(f'<circle cx="{x}" cy="{y}" r="4" fill="{s.t["accent"]}" stroke="{s.t["surface"]}" stroke-width="2"/>')
-    s.text(x1+10, points[-1][1]+4, number(weeks[-1]["value"]), 12, "secondary")
+    if peak != 51:
+        s.text(x1+10, points[-1][1]+4, number(weeks[-1]["value"]), 12, "secondary")
     return s.finish()
 
 
