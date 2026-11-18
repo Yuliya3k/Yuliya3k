@@ -1,0 +1,57 @@
+name: Stats
+
+on:
+  schedule:
+    - cron: "0 4 * * *"
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - .github/workflows/stats.yml
+      - scripts/**
+
+permissions:
+  contents: write
+
+concurrency:
+  group: stats
+  cancel-in-progress: true
+
+jobs:
+  stats:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      # METRICS_TOKEN: classic token with repo + read:user, so private
+      # repositories count. The generator never prints or renders a
+      # repository name: the logs of this public repository are public.
+      - name: Generate stats cards
+        env:
+          METRICS_TOKEN: ${{ secrets.METRICS_TOKEN }}
+        run: python3 scripts/stats/generate.py --out stats
+
+      - name: Check public text
+        run: python3 scripts/check_public_text.py
+
+      - name: Commit changed cards
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add stats/*.svg
+          if git diff --cached --quiet; then
+            echo "Stats cards unchanged, nothing to commit"
+            exit 0
+          fi
+          git diff --cached --stat
+          git commit -m "Update stats cards [skip ci]"
+          for attempt in 1 2 3; do
+            if git push origin HEAD:main; then
+              echo "Pushed on attempt $attempt"
+              exit 0
+            fi
+            echo "Push rejected (attempt $attempt), rebasing on origin/main"
+            git pull --rebase origin main
+          done
+          echo "Push failed after 3 attempts"
+          exit 1

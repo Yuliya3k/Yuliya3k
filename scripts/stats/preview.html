@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="en">
+<meta charset="utf-8">
+<title>Local statistics preview</title>
+<style>
+* { box-sizing: border-box; }
+body { margin: 0; padding: 28px; font-family: sans-serif; background: #ffffff; color: #1f2328; }
+body.dark { background: #0d1117; color: #f0f6fc; }
+h1 { font-size: 20px; font-weight: 600; margin: 0 0 20px; }
+.cards { display: grid; gap: 24px; max-width: 840px; }
+img { display: block; width: 100%; height: auto; }
+</style>
+<h1>Statistics cards on white</h1>
+<div class="cards"></div>
+<script>
+const dark = location.hash === '#dark';
+document.body.classList.toggle('dark', dark);
+document.querySelector('h1').textContent = dark ? 'Statistics cards on dark' : 'Statistics cards on white';
+for (const name of ['commits', 'languages', 'projects']) {
+  const img = document.createElement('img');
+  img.src = '../../.tmp/stats-preview/' + name + (dark ? '-dark.svg' : '-light.svg');
+  img.alt = name + ' statistics';
+  document.querySelector('.cards').append(img);
+}
+</script>
+</html>
